@@ -16,9 +16,9 @@ const connect = function () {
     conn.write('Name: BKK');
   });
 
-  conn.on('connect', () => {
-    conn.write('Move: up');
-  });
+  // conn.on('connect', () => {
+  //   conn.write('Move: up');
+  // });
 
   conn.on("data", (messageFromServer) => {
     console.log('Server says:', messageFromServer)
@@ -29,8 +29,5 @@ const connect = function () {
 
   return conn;
 };
-
-console.log("Connecting ...");
-connect();
 
 module.exports = connect;
