@@ -7,6 +7,15 @@ const connect = function () {
     host: '165.227.47.243',
     port: '50541'
   });
+
+  conn.on("connect", () => {
+    console.log('Connection Established')
+  });
+
+  conn.on('connect', () => {
+    conn.write('Name: BKK');
+  });
+
   conn.on("data", (messageFromServer) => {
     console.log('Server says:', messageFromServer)
   });
